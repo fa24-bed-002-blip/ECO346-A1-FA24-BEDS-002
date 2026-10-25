@@ -58,5 +58,5 @@ This analysis focuses on **Variant 2**, covering the rural households of Sindh:
 ---
 
 ### Question 5: Python Replication Assessment
-* **Replication Results:** Replicating the pipeline in Python produced identical weighted literacy percentages to R when rounded to one decimal place[cite: 3].
-* **Environment Differences:** Default aesthetic choices differed between platforms—such as default canvas margins, grid styles, and font layouts (`ggplot2` vs. `matplotlib`)[cite: 3]. Explicit formatting was added in Python to maintain output consistency across both environments[cite: 3].
+* **Replication Results:** Replicating the pipeline in Python produced identical weighted literacy percentages to R when rounded to one decimal place.
+* **Environment Differences:** Default aesthetic choices differed between platforms—such as default canvas margins, grid styles, and font layouts (`ggplot2` vs. `matplotlib`). Explicit formatting was added in Python to maintain output consistency across both environment.
