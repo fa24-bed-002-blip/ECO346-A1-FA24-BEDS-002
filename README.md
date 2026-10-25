@@ -31,27 +31,30 @@ This analysis focuses on **Variant 2**, covering the rural households of Sindh:
 
 ---
 
-## 3. Findings & Short Responses
-
 ### Question 2: Distribution of Education Spending
-* **Sample Summary:** Computed for students with positive spending (`ed_total > 0`) within the range of Rs 100 to Rs 1,000,000[cite: 2].
-* **Key Observations:** The distribution of annual education spending is heavily right-skewed[cite: 2]. While most families spend modest amounts on schooling, a small fraction spends significantly higher amounts[cite: 2].
-* **Weights Influence:** Weighted and unweighted medians differ because survey weights (`hhweight`) adjust for sampling probabilities and household structures, making the estimates reflective of the true rural population of Sindh[cite: 1, 2].
+* **Sample Summary:** This analysis includes students with active education spending (`ed_total > 0`) falling between Rs 100 and Rs 1,000,000.
+* **Key Observations:** Education spending in rural Sindh is highly uneven. Most families spend relatively small amounts on schooling, while a very small group of households spends substantially higher amounts, making the graph heavily skewed to the right.
+* **Role of Household Weights:** The weighted median differs from the unweighted median because survey weights (`hhweight`) adjust for household selection probabilities. Using weights ensures that our figures accurately reflect the entire rural population of Sindh rather than just the raw sample.
 
 ---
 
 ### Question 3: Age Profile & Gender Disparities
-* **Key Takeaway:** Literacy rates drop noticeably in older age groups[cite: 3]. Younger generations display higher literacy, pointing to progressive improvements in educational access over time (a cohort effect)[cite: 3].
-* **Gender Disparity:** Males maintain higher literacy rates across all age brackets, though the gender gap varies across cohorts[cite: 3].
-* **Analytical Limitation:** Because this analysis uses cross-sectional data from a single point in time, it cannot separate true age-related changes within individuals from generational changes in schooling access over time[cite: 3].
+* **Key Takeaway:** Literacy rates are significantly higher among younger people compared to older generations. This trend reflects steady improvements in school access and educational policies over recent decades (a cohort effect).
+* **Gender Disparity:** Males have higher literacy rates than females across every age group, showing a persistent educational gap between men and women in rural Sindh.
+* **Analytical Limitation:** Since this data comes from a single survey at one point in time (cross-sectional data), we cannot separate true age-related changes of individuals from broader historical improvements in schooling access over generations.
 
 ---
 
 ### Question 4: Plot Redesign & Visualization Choices
-* **The Problem:** The default scatterplot (`default.svg`) maps binary data ($0/1$), leading to severe overplotting where thousands of points overlap along two horizontal lines[cite: 3].
-* **The Solution:** The redesigned figure (`relationship.svg`) replaces raw dots with age-group averages[cite: 2, 3]. It uses continuous lines to highlight trends, distinct colors for gender comparison, and marker styles to signal small sample sizes ($n < 30$)[cite: 2, 3].
-* **Trade-off:** While the redesign highlights trends and population patterns clearly, it abstracts away individual-level variation within each age band[cite: 3].
+* **The Problem:** The default scatterplot (`default.svg`) plots a binary outcome (0 or 1), causing thousands of overlapping dots to cluster along just two flat lines. This makes it impossible to see real trends or patterns.
+* **The Solution:** The redesigned figure (`relationship.svg`) solves overplotting by grouping ages into 5-year bands and plotting the average weighted literacy rate for each group. It uses clean line charts for trends, distinct colors for gender comparison, and hollow markers to highlight small sample sizes ($n < 30$).
+* **Trade-off:** While the line chart makes broad population trends much easier to understand, it hides individual-level variation within each age group.
 
+---
+
+### Question 5: Python Replication Assessment
+* **Replication Results:** Replicating the analysis in Python produced exact matching weighted literacy percentages when rounded to one decimal place.
+* **Environment Differences:** The primary differences between R and Python were default graphic aesthetics—such as canvas margins, grid layouts, and legend styles (`ggplot2` vs. `matplotlib`). Explicit formatting was added in Python to ensure both output figures look identical.
 ---
 
 ### Question 5: Python Replication Assessment
